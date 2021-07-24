@@ -1,0 +1,29 @@
+canvas=document.getElementById("myCanvas");
+ctx=canvas.getContext("2d");
+var roverwidth=100;
+var roverheight=90;
+var roverimage="rover.png";
+var roverbackground="mars.jpg";
+var roverx=0;
+var rovery=0;
+function add(){
+  background_img_tag=new Image();
+  background_img_tag.onload=uploadbackground;
+  background_img_tag.src=roverbackground;
+
+  rover_img_tag=new Image();
+  rover_img_tag.onload=uploadroverimage;
+  rover_img_tag.src=roverimage;
+}
+function uploadbackground(){
+    ctx.drawImage(background_img_tag,0,0,canvas.width,canvas.height);
+}
+function uploadroverimage(){
+ ctx.drawImage(rover_img_tag,roverx.rovery,roverwidth,roverheight);
+}
+window.addEventListener("keydown",mykeydown);
+function mykeydown(e){
+    var keypressed=e.keyCode;
+    console.log(keypressed);
+    if(keyPressed == '38') { up(); console.log("up");
+}
